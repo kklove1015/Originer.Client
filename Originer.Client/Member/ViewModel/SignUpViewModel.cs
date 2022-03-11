@@ -1,5 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
-using Originer.Client.Common.MVVM;
+﻿using DaminLibrary.MVVM;
+using GalaSoft.MvvmLight.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+
+
 
 namespace Originer.Client.Member.ViewModel
 {
@@ -19,7 +21,6 @@ namespace Originer.Client.Member.ViewModel
             get => accountTextBox;
             set
             {
-               
                 accountTextBox = value;
                 if (AccountTextBox is null || AccountTextBox == "") { AccountCheckButtonIsEnabled = false; }
                 else { AccountCheckButtonIsEnabled = true; }
