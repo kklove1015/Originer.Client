@@ -19,7 +19,7 @@ namespace Originer.Client.Member.ViewModel
             get => accountTextBox;
             set
             {
-               
+               //
                 accountTextBox = value;
                 if (AccountTextBox is null || AccountTextBox == "") { AccountCheckButtonIsEnabled = false; }
                 else { AccountCheckButtonIsEnabled = true; }
