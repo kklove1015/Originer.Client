@@ -25,6 +25,7 @@ namespace Originer.Client.Member.ViewModel
                 if (AccountTextBox is null || AccountTextBox == "") { AccountCheckButtonIsEnabled = false; }
                 else { AccountCheckButtonIsEnabled = true; }
                 OnPropertyChanged("AccountTextBox");
+                Test();
             }
         }
         public ICommand AccountCheckButton { get; set; }

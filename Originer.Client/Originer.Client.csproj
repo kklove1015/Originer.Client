@@ -56,7 +56,7 @@
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="DaminLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DaminLibrary.1.0.7\lib\net472\DaminLibrary.dll</HintPath>
+      <HintPath>..\packages\DaminLibrary.1.0.8\lib\net472\DaminLibrary.dll</HintPath>
     </Reference>
     <Reference Include="DnsClient, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>..\packages\DnsClient.1.6.0\lib\net471\DnsClient.dll</HintPath>
