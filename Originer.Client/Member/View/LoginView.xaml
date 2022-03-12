@@ -34,9 +34,7 @@
             <Button Command="{Binding SignUpButton}"
                     Content="SIGN UP"
                     Margin="10 5"/>
-            <Button Command="{Binding TestButton}"
-                    Content="TEST"
-                    Margin="10 5"/>
+           
         </StackPanel>
     </Grid>
 </Window>

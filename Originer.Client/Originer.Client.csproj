@@ -210,15 +210,11 @@
     </Compile>
     <Compile Include="Member\ViewModel\LoginViewModel.cs" />
     <Compile Include="Member\ViewModel\SignUpViewModel.cs" />
-    <Compile Include="Member\ViewModel\TestViewModel.cs" />
     <Compile Include="Member\View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Member\View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Member\View\TestView.xaml.cs">
-      <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -267,10 +263,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Member\View\SignUpView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Member\View\TestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -7,7 +7,12 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:helper="clr-namespace:Originer.Client.Common.Helper"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
-        Title="회원가입" Height="auto" Width="350"  MinWidth="350" MaxWidth="350">
+        Title="회원가입" Height="auto" Width="350" MaxWidth="350" >
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="10"/>
+        </Style>
+    </Window.Resources>
     <Grid Margin="20">
         <StackPanel>
             <Grid Margin="0 5">
@@ -18,20 +23,22 @@
                 </Grid.ColumnDefinitions>
                 <TextBox Grid.Column="0"
                          Text="{Binding AccountTextBox , UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding AccountTextBoxIsEnabled}"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                         materialDesign:HintAssist.Hint="아이디를 입력해주세요"/>
+                         materialDesign:HintAssist.Hint="계정"/>
                 <Button Grid.Column="2"
                         Content="중복확인"
                         IsEnabled="{Binding AccountCheckButtonIsEnabled}"
                         Command="{Binding AccountCheckButton}"/>
             </Grid>
+            <Label Content="{Binding AccountStatus}" Foreground="{Binding AccountStatusForeground}"/>
             <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
-                         materialDesign:HintAssist.Hint="비밀번호를 입력해주세요"
+                         materialDesign:HintAssist.Hint="비밀번호"
                          helper:PasswordHelper.Attach="true"
                          helper:PasswordHelper.Password="{Binding Password,Mode=TwoWay}"
                          Margin="0 5"/>
             <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
-                         materialDesign:HintAssist.Hint="비밀번호를 다시 입력해주세요"
+                         materialDesign:HintAssist.Hint="비밀번호 확인"
                          helper:PasswordHelper.Attach="true"
                          helper:PasswordHelper.Password="{Binding PasswordCheck,Mode=TwoWay}"
                          Margin="0 5"/>
@@ -44,7 +51,7 @@
                 <TextBox Grid.Column="0"
                          Text="{Binding MailTextBox}"
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                         materialDesign:HintAssist.Hint="이메일을 입력해주세요"/>
+                         materialDesign:HintAssist.Hint="이메일"/>
                 <Button Grid.Column="2"
                         Content="인증코드"
                         Command="{Binding SendCodeButton}"/>
@@ -53,15 +60,13 @@
                 <StackPanel>
                     <TextBox Text="{Binding MailCodeTextBox}"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                             materialDesign:HintAssist.Hint="인증 코드를 입력해주세요"
+                             materialDesign:HintAssist.Hint="인증코드"
                              Margin="0 10"/>
                     <Button Content="인증하기"
                             Command="{Binding MailCodeCheckButton}"
                             IsEnabled="{Binding MailCodeCheckButtonIsEnabled}"/>
                 </StackPanel>
             </Grid>
-
-
             <Button Content="회원가입"
                     Command="{Binding SignUpButton}"
                     IsEnabled="{Binding SignUpButtonIsEnabled}"
