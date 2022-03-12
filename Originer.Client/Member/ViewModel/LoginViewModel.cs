@@ -18,13 +18,15 @@ namespace Originer.Client.Member.ViewModel
         public ICommand LoginButton { get; set; }
         public ICommand SignUpButton { get; set; }
 
-
+        public ICommand TestButton { get; set; }
 
         public LoginViewModel(Window window)
         {
             NowWIndow = window;
             LoginButton = new RelayCommand(OnLogin);
             SignUpButton = new RelayCommand(OnSignUp);
+
+            TestButton = new RelayCommand(OnTest);
         }
         private void OnLogin() 
         {
@@ -35,7 +37,11 @@ namespace Originer.Client.Member.ViewModel
             var signUpView = new View.SignUpView();
             signUpView.ShowDialog();
         }
-
+        private void OnTest() 
+        {
+            var testView = new View.TestView();
+            testView.ShowDialog();
+        }
 
     }
 }

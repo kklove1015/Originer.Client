@@ -5,12 +5,24 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <Style x:Key="Snackbar" TargetType="{x:Type materialDesign:Snackbar}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <materialDesign:Snackbar
+                                                     IsActive="{Binding IsSnackbarActive}">
+                                <materialDesign:SnackbarMessage Content="{Binding SnackbarText}"
+                                                                Foreground="White"
+                                                                HorizontalContentAlignment="Center" 
+                                                                VerticalContentAlignment="Center"
+                                                                Opacity="0.9"
+                                                                Width="auto"/>
+                            </materialDesign:Snackbar>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
             <ResourceDictionary.MergedDictionaries>
-                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Orange.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />-->
-                
                 <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepOrange" SecondaryColor="Lime" ColorAdjustment="{materialDesign:ColorAdjustment}" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>

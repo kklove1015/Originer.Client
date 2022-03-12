@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:helper="clr-namespace:Originer.Client.Common.Helper"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight"
-        Title="회원가입" Height="400" Width="350" MinHeight="400" MinWidth="350" MaxHeight="400" MaxWidth="350">
+        Title="회원가입" Height="auto" Width="350"  MinWidth="350" MaxWidth="350">
     <Grid Margin="20">
         <StackPanel>
             <Grid Margin="0 5">
@@ -66,6 +66,7 @@
                     Command="{Binding SignUpButton}"
                     IsEnabled="{Binding SignUpButtonIsEnabled}"
                     Margin="0 10"/>
+            <materialDesign:Snackbar Style="{StaticResource Snackbar}" DataContext="{Binding Snackbar}"/>
         </StackPanel>
     </Grid>
 </Window>

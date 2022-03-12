@@ -1,5 +1,6 @@
 ﻿using DaminLibrary.MVVM;
 using GalaSoft.MvvmLight.Command;
+using Originer.Client.Common.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -110,6 +111,10 @@ namespace Originer.Client.Member.ViewModel
                 OnPropertyChanged("SignUpButtonIsEnabled");
             }
         }
+
+        public SnackBarHelper SnackBar { get; set; } = new SnackBarHelper();
+
+
         public SignUpViewModel()
         {
             SendCodeButton = new RelayCommand(OnSendCode);
@@ -117,6 +122,7 @@ namespace Originer.Client.Member.ViewModel
         private void OnSendCode() 
         {
             Console.WriteLine("OnSendCode Click");
+            SnackBar.SnackbarActive("테스트테스트");
         }
     }
 }
