@@ -1,6 +1,7 @@
 ﻿using DaminLibrary.Expansion;
 using DaminLibrary.MVVM;
 using GalaSoft.MvvmLight.Command;
+using Originer.Client.Common.Damin;
 using Originer.Client.Common.Helper;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,14 @@ using System.Windows.Media;
 
 namespace Originer.Client.Member.ViewModel
 {
-    public class SignUpViewModel : MVVMBase
+    public class SignUpViewModel : SignUpInfo
     {
-        private void OnAccountStatusCheck(string account)
-        {
-            if (account.IsNullOrWhiteSpace() || account.Length == 0) { AccountCheckButtonIsEnabled = false; AccountStatus = "아이디를 입력해주세요."; AccountStatusForeground = Brushes.Red; return; }
-            else if ((account.Length > 0 && account.Length < 4) || account.Length > 16) { AccountCheckButtonIsEnabled = true; AccountStatus = "아이디는 4~16 글자 가능합니다."; AccountStatusForeground = Brushes.Red; return; }
-            else if (account.Length > 4 || account.Length < 16) { AccountCheckButtonIsEnabled = true; AccountStatus = "중복확인이 필요합니다"; AccountStatusForeground = Brushes.Green; return; }
-        }
+        //private void OnAccountStatusCheck(string account)
+        //{
+        //    if (account.IsNullOrWhiteSpace() || account.Length == 0) { AccountCheckButtonIsEnabled = false; AccountStatus = "아이디를 입력해주세요."; AccountStatusForeground = Brushes.Red; return; }
+        //    else if ((account.Length > 0 && account.Length < 4) || account.Length > 16) { AccountCheckButtonIsEnabled = true; AccountStatus = "아이디는 4~16 글자 가능합니다."; AccountStatusForeground = Brushes.Red; return; }
+        //    else if (account.Length > 4 || account.Length < 16) { AccountCheckButtonIsEnabled = true; AccountStatus = "중복확인이 필요합니다"; AccountStatusForeground = Brushes.Green; return; }
+        //}
         #region Account
         private string accountTextBox;
         public string AccountTextBox
@@ -30,9 +31,7 @@ namespace Originer.Client.Member.ViewModel
             set
             {
                 accountTextBox = value;
-                OnAccountStatusCheck(AccountTextBox);
-                //if (AccountTextBox is null || AccountTextBox == "") { AccountCheckButtonIsEnabled = false; }
-                //else { AccountCheckButtonIsEnabled = true; AccountStatus = "TEST"; AccountStatusForeground = Brushes.Red; }
+                //OnAccountStatusCheck(AccountTextBox);
                 OnPropertyChanged("AccountTextBox");
             }
         }
@@ -183,5 +182,12 @@ namespace Originer.Client.Member.ViewModel
             Snackbar.SnackbarActive("테스트테스트");
             Console.WriteLine("OnSendCode Click");
         }
+        public override string DataErrorInfo(string columnName)
+        {
+
+            return base.DataErrorInfo(columnName);
+        }
+
+
     }
 }
